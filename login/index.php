@@ -9,21 +9,21 @@
     <title>ورود</title>
 </head>
 <body>
-    <div class="container-fluid pt-2">
+    <div class="container-fluid pt-1">
         <div class="row pt-3">
             <div class="col-xs-12 col-sm-2 col-md-3 col-lg-4"></div>
             <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
                 <div class="container">
                     <div class="row pt-5">
-                        <div class="col-md-12 mt-3 mb-1 text-center">
+                        <div class="col-md-12 mt-1 mb-1 text-center">
                             <img src="images/Login.png" alt="">
-                            <h2 class="mt-3 lalezar mt-5 mb-3">
+                            <h2 class="mt-3 lalezar mt-1 mb-3">
                                 ورود
                             </h2>
                             <p class="text-muted">برای ورود به سیستم نام کاربری و رمز کاربری خود را وارد نمایید</p>
                         </div>
 
-                        <div class="col-md-12 mt-3">
+                        <div class="col-md-12">
                             <form class="p-5" action="is_login.php" method="post"  >
                                 <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label h5 text-muted lalezar">نام کاربری</label>
