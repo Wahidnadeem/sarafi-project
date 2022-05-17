@@ -1,0 +1,13 @@
+.recive_money{
+	font-weight: bold;
+	color: #00d97e !important;
+}
+
+.send_money {
+	font-weight: bold;
+	color: #f6465d !important;
+}
+
+.default {
+	color: #444;
+}

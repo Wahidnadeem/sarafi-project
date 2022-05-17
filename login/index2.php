@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<?php 
+    if (isset($_GET['notuser'])) {
+        $para = "<i class='fa fa-warning' ></i> نام کاربری یا رمز عبور تان اشتباه است !";
+        $color= "#e03535"; 
+    } else if (isset($_GET['empty'])) {
+        $para = " <span class='warning'><i class='fa fa-warning' ></i> نام کاربری یا رمز عبور تان  خالی است .</span>";
+        $color= "#de9a00"; 
+        
+    }else{
+        $para = "";
+    }
+ ?>
+
+<!-- Mirrored from colorlib.com/etc/lf/Login_v2/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 May 2021 18:27:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>کتابخانه عمومی  پوهنحی ژونالیزم  - پوهنتون هرات</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="../assets/sfont/font-sans.css">
+<link type="text/css" rel="stylesheet" href="../assets/dist/fonts/font.css" />
+
+<link rel="stylesheet" type="text/css" href="../assets/bfont/font-bttr.css">
+<meta name="robots" content="noindex, follow">
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" action="is_login.php" method="post" >
+                    <input type="hidden" name="is_login">
+
+                    <span class="login100-form-title p-b-26 bfont">
+                        خوش آمدید
+                    </span>
+
+                    <div class="wrap-input100 bcfont" dir="rtl" >
+                        <input class="input100 " type="text" name="username"  autocomplete="off">
+                        <span class="focus-input100" data-placeholder="نام کاربری"></span>
+                    </div>
+
+                    <div class="wrap-input100 bcfont " dir="rtl"  >
+                        <span class="btn-show-pass">
+                            <i class="zmdi zmdi-eye pass-show-icon"></i>
+                        </span>
+                        <input class="input100 bfont" type="password" name="password">
+                        <span class="focus-input100 bcfont" data-placeholder="رمز عبور"></span>
+                    </div>
+                    <p  dir="rtl" class="bfont" style="color: <?php echo $color; ?>"><?php echo $para; ?></p>
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button type="submit" class="login100-form-btn bfont">
+                                ورود
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-center p-t-115">
+                        
+
+                        <a class="bsfont" href="https://www.afghanvteam.com">
+                            <img src="images/afg.jpg" style="    width: 100px;position: relative;bottom: 25px;left: 10px;" >
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-23581568-13');
+    </script>
+<script defer src="../../../../static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"657a04160e7cee3b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.2","si":10}'></script>
+</body>
+
+<!-- Mirrored from colorlib.com/etc/lf/Login_v2/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 May 2021 18:27:36 GMT -->
+</html>
