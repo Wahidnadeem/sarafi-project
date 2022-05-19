@@ -33,16 +33,21 @@ $pdf->SetHeaderData(    PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH,"" );
 $pdf->AddPage();
 
 
-$condition  = VD($_GET['query']);
+
+//PHP CODE FOR RETRIVE DATA
+
+$condition           = '';
+$currency_condition  = '';
+$condition           = VD($_GET['query']);
+$currency_condition  = VD($_GET['currency_condition']);
 
 $TIME_STAMP       = date('Y-m-d h-m-s');
 $TIME_STAMP       = str_replace(' ','__',$TIME_STAMP);
 $DATE       = date('Y-m-d');
 $PDATE      = clean_data(gregorian_to_jalali_date($DATE,'-'));
 
+$view_data = $db->query("SELECT * FROM `accounts` WHERE `deleted` = '0' $condition ORDER BY id DESC ");
 
-
- $view_data = $db->query("SELECT * FROM `accounts` WHERE `deleted` = '0' $condition ORDER BY id DESC ");
 $add_br  = '';
 $number_loop_count = $view_data->rowCount() % 20;
 
@@ -52,7 +57,8 @@ if($number_loop_count > 11 ){
 
 $main_data = '';
 $count = 1;
-if($view_data->rowCount() > 0  ){                          
+if($view_data->rowCount() > 0  ){    
+
                                             
     foreach ($view_data as $key => $row) {
 
@@ -93,21 +99,22 @@ if($view_data->rowCount() > 0  ){
             }
 
             $total_balance_doller += $temp;
+
         }
 
 
         
-        echo '
+        $main_data .= '
             <tr> 
-                <td> '.($count++).'</td>
-                <td> '.$row['account_code'].' </td>
-                <td> '.$row['first_name'].' </td>
-                <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[1].' </span> </td>
-                <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[2].' </span> </td>
-                <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[3].' </span> </td>
-                <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[4].' </span> </td>
-                <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[5].' </span> </td>
-                <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" >  '.$total_balance_doller.'</span> </td>
+                <td align="center"> '.$total_balance_doller.' </td>   
+                <td align="center">'.$array_temp[5].'  </td>
+                <td align="center">'.$array_temp[4].'  </td>
+                <td align="center">'.$array_temp[3].'  </td>
+                <td align="center">'.$array_temp[2].'  </td>
+                <td align="center">'.$array_temp[1].'  </td>
+                <td align="center"> '.$row['first_name'].' </td>
+                <td align="center"> '.$row['account_code'].' </td>
+                <td align="center"> '.($count++).'</td>
             </tr>
 
         ';
@@ -183,52 +190,52 @@ if($view_data->rowCount() > 0  ){
             $total_balance_doller += $temp;
          }
 
-         echo '
+         $totla_amount .= '
             <tr>
-               <th><span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[1].'  </span></th>
-               <th><span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[2].'  </span></th>
-               <th><span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[3].'  </span></th>
-               <th><span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[4].'  </span></th>
-               <th><span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[5].'  </span></th>
-               <th><span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$total_balance_doller.'  </span></th>
+               <th align="center">'.$total_balance_doller.'</th>
+               <th align="center">'.$array_temp[5].'</th>
+               <th align="center">'.$array_temp[4].'</th>
+               <th align="center">'.$array_temp[3].'</th>
+               <th align="center">'.$array_temp[2].'</th>
+               <th align="center">'.$array_temp[1].'</th>
             </tr>
          ';
 
 
 $html = '
     <div style ="text-align:right;position:relative;top:30px; font-size:16px  " >   گزارش انتقالات و معاملات پولی </div>
-    <div style ="text-align:right;position:relative;top:30px; font-size:16px  " >   دارنده حساب :   </div>
-    <div style ="text-align:right;position:relative;top:30px; font-size:16px  " > شماره حساب  : </div>
+    <div style ="text-align:right;position:relative;top:30px; font-size:16px  " > گزارش حسابات مشتریان   </div>
     <div style ="text-align:right;position:relative;top:30px; font-size:16px  " >تاریخ گزارش  : '.$PDATE.' </div>
     <br>
 
 <table border="1"  cellpadding="5">
     <tr>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">شماره</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">حساب</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">نام</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">افغانی</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">دالر</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">تومان</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">کلدار</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">یورو</th>
-        <th  align="center" style="font-weight:600;background-color:#95ccec;color:#000"  width="150">بیلانس</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="90">بیلانس</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="60">یورو</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="70">کلدار</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="110">تومان</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="60">دالر</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="80">افغانی</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="115">نام</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="45">حساب</th>
+        <th  align="center" style="font-weight:100;background-color:#95ccec;color:#000"  width="30">#</th>
     </tr>
-    '.$main_data.'
+
+   '.$main_data.'
    
 </table>
 <br><br><br>'.$add_br.'
 <h4 align="right">
  مجموع کل
 </h4>
-<table border="1"  cellpadding="4">
+<table border="1"  cellpadding="5">
     <tr>
-         <th align="center"> مجموعه افغانی   </th>
-         <th align="center"> مجموعه دالر </th>
-         <th align="center"> مجموعه تومان </th>
-         <th align="center">مجموعه  کلدار</th>
-         <th align="center">مجموعه یورو</th>
-         <th align="center"> مجموعه به دالر  </th>
+         <th align="center" width="110"> مجموعه به دالر  </th>
+         <th align="center" width="110">مجموعه یورو</th>
+         <th align="center" width="110">مجموعه  کلدار</th>
+         <th align="center" width="110"> مجموعه تومان </th>
+         <th align="center" width="110"> مجموعه دالر </th>
+         <th align="center" width="110"> مجموعه افغانی   </th>
     </tr>
     
     '.$totla_amount.'
@@ -238,6 +245,7 @@ $html = '
 
 
 ';
+
 
 // output the HTML content
 $pdf->writeHTML($html, true, false, true, false, '');
