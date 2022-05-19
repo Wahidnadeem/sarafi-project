@@ -1,7 +1,12 @@
 <?php
 
-
 require_once "../lib/db.php";
+
+if( !isset($_SESSION['user_id']) || !isset($_SESSION['user_name'])){
+    header("location: ../login/");
+    exit();
+}
+
 
 require_once('tcpdf/tcpdf.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -46,7 +51,10 @@ $TIME_STAMP       = str_replace(' ','__',$TIME_STAMP);
 $DATE       = date('Y-m-d');
 $PDATE      = clean_data(gregorian_to_jalali_date($DATE,'-'));
 
+
 $view_data = $db->query("SELECT * FROM `accounts` WHERE `deleted` = '0' $condition ORDER BY id DESC ");
+
+
 
 $add_br  = '';
 $number_loop_count = $view_data->rowCount() % 20;
@@ -252,9 +260,9 @@ $pdf->writeHTML($html, true, false, true, false, '');
 
 $pdf->lastPage();
 
-
+$customers = "Report All Customers Accounts Date :";
 //Close and output PDF document
-$string = $account_id.' - '.$TIME_STAMP;
+$string = $customers.''.$TIME_STAMP;
 $pdf->Output($string.'.pdf', 'I');
 
 //============================================================+

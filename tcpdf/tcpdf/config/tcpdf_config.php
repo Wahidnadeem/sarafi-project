@@ -109,7 +109,7 @@ define ('PDF_AUTHOR', 'TCPDF');
 /**
  * Header title.
  */
-define ('PDF_HEADER_TITLE', 'TCPDF Example');
+define ('PDF_HEADER_TITLE', 'Sarafi Report');
 
 /**
  * Header description string.
@@ -149,7 +149,7 @@ define ('PDF_MARGIN_LEFT', 15);
 /**
  * Right margin.
  */
-define ('PDF_MARGIN_RIGHT', 25);
+define ('PDF_MARGIN_RIGHT', 15);
 
 /**
  * Default main font name.
