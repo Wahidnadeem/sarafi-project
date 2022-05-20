@@ -284,17 +284,17 @@ $account_name = $db->query("SELECT * FROM accounts WHERE `deleted` = '0' AND `id
                                  
                                  $total_currecny_blase = $credit - $debt;
                                   if ( $total_currecny_blase < 0) {
-                                   $master_blance = '<span class = "send_money" dir = "ltr">'.$total_currecny_blase.'</span>';
+                                   $master_blance = '<span class = "send_money" dir = "ltr">'.number_format($total_currecny_blase).'</span>';
                                   }elseif($total_currecny_blase >=0){
-                                    $master_blance = '<span class = "default">'.$total_currecny_blase.'</span>';
+                                    $master_blance = '<span class = "default">'.number_format($total_currecny_blase).'</span>';
                                   }
 
                                   echo '
                                      <tr>
                                         <td> '.$key.'</td>
                                         <td> '.$MIAN_CURRENCIES[$key].' </td>
-                                        <td> <span class="'.$CURRENCY_ICON[$key].'">'.$credit.'          </span> </td>
-                                        <td> <span class="'.$CURRENCY_ICON[$key].'">'.$debt.'            </td>
+                                        <td> <span class="'.$CURRENCY_ICON[$key].'">'.number_format($credit).'          </span> </td>
+                                        <td> <span class="'.$CURRENCY_ICON[$key].'">'.number_format($debt).'            </td>
                                         <td> <span class="'.$CURRENCY_ICON[$key].'">'.$master_blance.'   </span> </td>
                                      </tr>
                                   ';
