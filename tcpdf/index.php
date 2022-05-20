@@ -149,11 +149,11 @@ $html = '
  مجموع کل
 </h4>
 <table border="1"  cellpadding="4">
-    <tr>
-        <th align="center">موجودی فعلی</th>
-        <th align="center">برد</th>
-        <th align="center">رسید</th>
-        <th align="center">واحد پول</th>
+     <tr>
+        <th align="center" width="164">موجودی فعلی</th>
+        <th align="center" width="164">برد</th>
+        <th align="center" width="164">رسید</th>
+        <th align="center" width="164">واحد پول</th>
     </tr>
     
     '.$totla_amount.'

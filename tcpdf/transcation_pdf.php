@@ -71,7 +71,7 @@ if( $view_data->rowCount() > 0  ) {
         <td align="right"> ' . $rows['note'] . '  </td>
         <td align="center">'.$rows['date']. '</td>
         <td align="center" > '.$type_status.' </td>
-        <td align="center"> '.$rows['amount']. ' </td>
+        <td align="center">'.number_format($rows['amount']). ' </td>
         <td align="center"> ' . $currency_row['name'] . ' </td>
         <td align="center">'. $rows['by_person'] . ' </td>
         <td align="center"> '.$count++.' </td>
@@ -103,17 +103,17 @@ if( $view_data->rowCount() > 0  ) {
             @$master_blance_amount = $db->query("SELECT * FROM `account_balance` WHERE account_id = '$account_id' AND `currency_id` = '$key' ")->fetch()['amount'] + 0;
 
             if ($master_blance_amount < 0) {
-             $master_blance = '<span class = "send_money" dir = "ltr">'.$master_blance_amount.'</span>';
+             $master_blance = '<span class = "send_money" dir = "ltr">'.number_format($master_blance_amount).'</span>';
             }elseif($master_blance_amount >=0){
-              $master_blance = '<span class = "default">'.$master_blance_amount.'</span>';
+              $master_blance = '<span class = "default">'.number_format($master_blance_amount).'</span>';
             }
 
             $totla_amount .= '
                <tr>
-                  <td align="center"> '.$master_blance.' </td>
-                  <td align="center"> <span class="'.$CURRENCY_ICON[$key].'">  '.$debt.' </span> </td>
-                  <td align="center"> <span class="'.$CURRENCY_ICON[$key].'">  '.$credit.' </span> </td>
-                  <td align="center"> <span class="'.$CURRENCY_ICON[$key].'"> '.$MIAN_CURRENCIES[$key].' </span> </td>
+                  <td align="center"> '.$master_blance.'         </td>
+                  <td align="center"> '.number_format($debt).'   </td>
+                  <td align="center"> '.number_format($credit).' </td>
+                  <td align="center"> '.$MIAN_CURRENCIES[$key].' </td>
                </tr>
             ';
          }
