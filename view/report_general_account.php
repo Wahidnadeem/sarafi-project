@@ -9,9 +9,7 @@
             $date = VD($_POST['date']);
         }
    }
-   
-//    echo $date;
-//    exit;
+
 
     // get debt and credit data 
    $view_data = $db->query("SELECT  SUM(amount) as amount , currency_id , `type`  FROM `account_transaction` WHERE `date` = '$date' GROUP BY currency_id , `type` ");

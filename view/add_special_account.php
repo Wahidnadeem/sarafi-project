@@ -183,11 +183,11 @@ $record     = $list_data['record'];
                             </div>
                             <div class="col-xs-12 col-md-6 col-lg-2 mb-3">
                                 <label for="exampleInputPassword1" class="form-label text-muted">از تاریخ</label>
-                                <input type="text" id="start_date" onload ="startDateEndDate(this.value , end_date.value)" autocomplete="off" name="start_date" value="" class="form-control date" >
+                                <input type="text" id="start_date" onload ="startDateEndDate(this.value , end_date.value)" autocomplete="off" name="s_start_date" value="" class="form-control date" >
                             </div>
                             <div class="col-xs-12 col-md-6 col-lg-2 mb-3">
                                 <label for="exampleInputPassword1" class="form-label text-muted">الی تاریخ</label>
-                                <input type="text" id="end_date" autocomplete="off" name="end_date" value="" class="form-control date" >
+                                <input type="text" id="end_date" autocomplete="off" name="s_end_date" value="" class="form-control date" >
                             </div>
                             <div class="col-xs-12 col-md-6 col-lg-2 mb-3">
                                 <div class="text-white pt-2 ">s</div>
