@@ -120,7 +120,7 @@ if($view_data->rowCount() > 0  ){
                 <td align="center">'.$array_temp[3].'  </td>
                 <td align="center">'.$array_temp[2].'  </td>
                 <td align="center">'.$array_temp[1].'  </td>
-                <td align="center"> '.$row['first_name'].' </td>
+                <td align="center"> '.$row['first_name'] .''. $row['last_name'] .' </td>
                 <td align="center"> '.$row['account_code'].' </td>
                 <td align="center"> '.($count++).'</td>
             </tr>

@@ -196,7 +196,7 @@
                                                     <tr> 
                                                         <td> '.($count++).'</td>
                                                         <td> '.$row['account_code'].' </td>
-                                                        <td> '.$row['first_name'].' </td>
+                                                        <td> '.$row['first_name'] .' '. $row['last_name'].'</td>
                                                         <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[1].' </span> </td>
                                                         <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[2].' </span> </td>
                                                         <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[3].' </span> </td>
