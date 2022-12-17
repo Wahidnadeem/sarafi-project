@@ -104,7 +104,7 @@
                                        <div class="col-xs-12 col-md-6 col-lg-2 mb-3">
                                           <div class="text-white pt-2 ">s</div>
                                           <div class="d-grid gap-2">
-                                             <a href="../tcpdf/report_customer_pdf.php" class="btn btn-secondary btn-block border p-2">  چاپ گزارش  </a>
+                                             <a href="../tcpdf/report_customer_pdf.php?query=<?php echo $condition; ?>&currency_condition=<?php echo $currency_condition;?>" class="btn btn-secondary btn-block border p-2">  چاپ گزارش  </a>
                                           </div>
                                        </div>
 
@@ -196,7 +196,7 @@
                                                     <tr> 
                                                         <td> '.($count++).'</td>
                                                         <td> '.$row['account_code'].' </td>
-                                                        <td> '.$row['first_name'].' </td>
+                                                        <td> '.$row['first_name'] .' '. $row['last_name'].'</td>
                                                         <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[1].' </span> </td>
                                                         <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[2].' </span> </td>
                                                         <td> <span class="h4 mb-0 togg priv">******</span><span class="togg CurNumDiv  currSign" dir="ltr" > '.$array_temp[3].' </span> </td>

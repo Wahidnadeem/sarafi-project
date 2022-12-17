@@ -81,8 +81,8 @@
                                                                         <div class="col-md-10">
                                                                             <select class="form-control" id="account_type" name="account_type" >
                                                                                 <option  value=""> انتخاب نماید  </option>
-                                                                                <option value="debt"   <?php echo ( $row['account_type'] == "debt" ) ? 'selected' : '' ?> > افزاینده  </option>
-                                                                                <option value="credit" <?php echo ( $row['account_type'] == "credit" ) ? 'selected' : '' ?> > کاهنده  </option>
+                                                                                <option value="credit"   <?php echo ( $row['account_type'] == "credit" ) ? 'selected' : '' ?> > افزاینده  </option>
+                                                                                <option value="debt" <?php echo ( $row['account_type'] == "debt" ) ? 'selected' : '' ?> > کاهنده  </option>
                                                                             </select>
                                                                         </div>
                                                                     </div>

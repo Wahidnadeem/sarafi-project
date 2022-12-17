@@ -326,7 +326,7 @@ require_once("_config.php");
                                                     <div class="col-12 bg-light rounded-3 p-4">
                                                         <h5 class="text-start lalezar text-muted ">بالانس عمومی</h5>
                                                         <span id="total_blance">
-
+                                                            
                                                         </span>
                                                     </div>
 
