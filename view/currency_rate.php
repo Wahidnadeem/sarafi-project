@@ -88,7 +88,7 @@ require_once("_config.php");
                                                     </div>
 
                                                     <div class="row mt-3">
-                                                        <div class="col-md-2 required"><label class="form-label text-muted">نرخ معامله</label></div>
+                                                        <div class="col-md-2 required"><label class="form-label text-muted">مقدار عددی واحد</label></div>
                                                         <div class="col-md-10">
                                                             <input type="text" dir="ltr" required="" value="1" class="form-control num-f " autocomplete="off" id="amount_transaction" name="amount_transaction">
                                                         </div>
@@ -158,7 +158,7 @@ require_once("_config.php");
                                                 <th>شماره</th>
                                                 <th>از واحد پول</th>
                                                 <th>به واحد پول</th>
-                                                <th>نرخ معامله</th>
+                                                <th>مقدار عددی واحد</th>
                                                 <th>خرید </th>
                                                 <th>فروش</th>
                                                 <th>تاریخ</th>

@@ -20,9 +20,9 @@ if(isset($_POST['search'])){
         $condition  .= " AND phone = '$s_phone' ";
     }
 
-     if(!empty($_POST['s_start_date']) && !empty($_POST['s_end_date']) ){
-        $s_start_date = VD($_POST['s_start_date']);
-        $s_end_date   = VD($_POST['s_end_date']);
+     if(!empty($_POST['start_date']) && !empty($_POST['end_date']) ){
+        $s_start_date = VD($_POST['start_date']);
+        $s_end_date   = VD($_POST['end_date']);
         
         $condition .= " AND `date` BETWEEN  '$s_start_date' AND '$s_end_date' ";
     }   
