@@ -169,9 +169,9 @@ $pdf->writeHTML($html, true, false, true, false, '');
 
 $pdf->lastPage();
 
-
+$first_part = "CustomerID" .'_'. $account_id;
 //Close and output PDF document
-$string = $account_id.' - '.$TIME_STAMP;
+$string = $first_part.' '.$TIME_STAMP;
 $pdf->Output($string.'.pdf', 'I');
 
 //============================================================+
