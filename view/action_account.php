@@ -52,6 +52,10 @@ if(isset($_GET['delete']) && isset($_GET['id']) ){
 
         foreach ($if_exist as $key => $value) {
             if($value['amount'] > 0){
+                if ($page == "add_special_account") {
+                    header("location:add_special_account.php?has_account");
+                    exit(); 
+                }
                 header("location:add_account.php?has_account");
                 exit();          
             }
