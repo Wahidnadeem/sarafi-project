@@ -283,7 +283,7 @@ $record     = $list_data['record'];
           <div class="card">
             <div class="card-body">
               <div class="row mt-2">
-                <h5 class="text-start lalezar text-muted mb-5 ms-3">گذارشات عمومی</h5>
+                <h5 class="text-start lalezar text-muted mb-5 ms-3"> گذارشات عمومی <span style = ""> تاریخ <?php echo persionData($PDATE)?></span></h5>
                 <div class="row mt-2">
                   <div class="col-xs-12 col-sm-12 col-md-6 col-6">
                     <table id="datatable" class="table table-striped dt-responsive nowrap w-100">
