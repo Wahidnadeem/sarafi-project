@@ -9,6 +9,7 @@
     <div class="containers col-lg-6 col-md-6" style="float:right;">
 
         <div class="pic"></div>
+        
 
         <div class="box1"></div>
         <div class="box2"></div>
